@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triângulo com Asteriscos</title>
+</head>
+
+<body>
+    <div>
+        <h1>Exercício: Triângulo com Asteriscos</h1>
+        <h2>Faça um programa que recebe a altura de um triângulo em um número inteiro e imprima-o utilizando asteriscos.</h2>
+    </div>
+
+    <div id="resultado"></div>
+
+    <script>
+        const alturaTriangulo = parseInt(prompt('Digite a altura do triângulo:'));
+
+        if (!isNaN(alturaTriangulo)) {
+            imprimirTrianguloAsteriscos(alturaTriangulo);
+        } else {
+            alert("Você não digitou uma altura válida.");
+        }
+
+        function imprimirTrianguloAsteriscos(altura) {
+            const resultadoDiv = document.getElementById('resultado');
+            let triangulo = '';
+            for (let i = 1; i <= altura; i++) {
+                for (let j = 1; j <= i; j++) {
+                    triangulo += '* ';
+                }
+                triangulo += '<br>';
+            }
+            resultadoDiv.innerHTML = triangulo;
+        }
+    </script>
+</body>
+
+</html>

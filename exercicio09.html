@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantidade de Pessoas Maiores de 18 Anos</title>
+</head>
+
+<body>
+    <div>
+        <h1>Exercício: Quantidade de Pessoas Maiores de 18 Anos</h1>
+        <h2>Faça um programa que receba a idade de dez pessoas e que calcule e mostre a quantidade de pessoas com idade maior ou igual a 18 anos.</h2>
+    </div>
+
+    <div id="resultado"></div>
+
+    <script>
+        const quantidadePessoas = 10;
+        const resultadoDiv = document.getElementById('resultado');
+
+        const idades = [];
+        for (let i = 0; i < quantidadePessoas; i++) {
+            const idade = parseInt(prompt(`Digite a idade da pessoa ${i + 1}:`));
+            if (!isNaN(idade)) {
+                idades.push(idade);
+            } else {
+                alert("Você não digitou uma idade válida.");
+                break;
+            }
+        }
+
+        const pessoasMaioresDe18Anos = idades.filter(idade => idade >= 18).length;
+
+        resultadoDiv.innerHTML = `<h3>Idades digitadas: ${idades.join(', ')}</h3>`;
+        resultadoDiv.innerHTML += `<h3>Quantidade de pessoas maiores de 18 anos: ${pessoasMaioresDe18Anos}</h3>`;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadrado com Asteriscos</title>
+</head>
+
+<body>
+    <div>
+        <h1>Exercício: Quadrado com Asteriscos</h1>
+        <h2>Faça um programa que lê o tamanho do lado de um quadrado e imprime um quadrado daquele tamanho com asteriscos.</h2>
+    </div>
+
+    <div id="resultado"></div>
+
+    <script>
+        const tamanhoLado = parseInt(prompt('Digite o tamanho do lado do quadrado:'));
+
+        if (!isNaN(tamanhoLado)) {
+            imprimirQuadradoAsteriscos(tamanhoLado);
+        } else {
+            alert("Você não digitou um tamanho de lado válido.");
+        }
+
+        function imprimirQuadradoAsteriscos(tamanho) {
+            const resultadoDiv = document.getElementById('resultado');
+            let quadrado = '';
+            for (let i = 1; i <= tamanho; i++) {
+                for (let j = 1; j <= tamanho; j++) {
+                    quadrado += '* ';
+                }
+                quadrado += '<br>';
+            }
+            resultadoDiv.innerHTML = quadrado;
+        }
+    </script>
+</body>
+
+</html>

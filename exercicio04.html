@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números Primos</title>
+</head>
+
+<body>
+    <div>
+        <h1>Exercício: Números Primos de 0 a 100</h1>
+        <h2>Faça um programa que mostre todos os números primos de 0 a 100.</h2>
+        <button onclick="mostrarNumerosPrimos()">Mostrar Números Primos</button>
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        function mostrarNumerosPrimos() {
+            const resultadoDiv = document.getElementById('resultado');
+            resultadoDiv.innerHTML = '';
+
+            for (let i = 2; i <= 100; i++) {
+                if (ehPrimo(i)) {
+                    resultadoDiv.innerHTML += i + ' ';
+                }
+            }
+        }
+
+        function ehPrimo(numero) {
+            for (let j = 2; j < numero; j++) {
+                if (numero % j === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+</body>
+
+</html>

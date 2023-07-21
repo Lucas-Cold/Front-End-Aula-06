@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada do Número</title>
+</head>
+
+<body>
+    <div>
+        <h1>Exercício: Tabuada do Número</h1>
+        <h2>Faça um programa que recebe um número inteiro e mostra a tabuada desse número.</h2>
+    </div>
+    <script>
+        const target = window.prompt('Digite um número inteiro:', '');
+
+        if (!isNaN(target)) {
+            mostrarTabuada(parseInt(target));
+        } else {
+            alert("Você não digitou um número inteiro válido.");
+        }
+
+        function mostrarTabuada(numero) {
+            const resultadoDiv = document.createElement('div');
+            resultadoDiv.innerHTML = `<h2>Tabuada do ${numero}:</h2>`;
+            resultadoDiv.innerHTML += '<table>';
+            for (let i = 1; i <= 10; i++) {
+                const resultado = numero * i;
+                resultadoDiv.innerHTML += `<tr><td>${numero} x ${i}</td><td>=</td><td>${resultado}</td></tr>`;
+            }
+            resultadoDiv.innerHTML += '</table>';
+            document.body.appendChild(resultadoDiv);
+        }
+    </script>
+</body>
+
+</html>

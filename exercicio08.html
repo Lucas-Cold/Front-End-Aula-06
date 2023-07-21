@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média de Idades</title>
+</head>
+
+<body>
+    <div>
+        <h1>Exercício: Média de Idades</h1>
+        <h2>Faça um programa que receba 5 idades, calcule e mostre a média das idades digitadas.</h2>
+    </div>
+
+    <div id="resultado"></div>
+
+    <script>
+        const quantidadeIdades = 5;
+        const resultadoDiv = document.getElementById('resultado');
+
+        const idades = [];
+        for (let i = 0; i < quantidadeIdades; i++) {
+            const idade = parseInt(prompt(`Digite a idade ${i + 1}:`));
+            if (!isNaN(idade)) {
+                idades.push(idade);
+            } else {
+                alert("Você não digitou uma idade válida.");
+                break;
+            }
+        }
+
+        const somaIdades = idades.reduce((total, idade) => total + idade, 0);
+        const mediaIdades = somaIdades / idades.length;
+
+        resultadoDiv.innerHTML = `<h3>Idades digitadas: ${idades.join(', ')}</h3>`;
+        resultadoDiv.innerHTML += `<h3>Média das idades: ${mediaIdades.toFixed(2)}</h3>`;
+    </script>
+</body>
+
+</html>

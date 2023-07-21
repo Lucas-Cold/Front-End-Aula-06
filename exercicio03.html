@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem até N</title>
+</head>
+
+<body>
+    <div>
+        <h1>Exercício: Contagem até N</h1>
+        <h2>Faça um programa que recebe um número inteiro e mostra a contagem de 1 até ele.</h2>
+        <label for="numero">Digite um número inteiro:</label>
+        <input type="text" id="numero" />
+        <button onclick="contar()">Contar</button>
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        function contar() {
+            const inputNumero = document.getElementById('numero');
+            const resultadoDiv = document.getElementById('resultado');
+            const numero = parseInt(inputNumero.value);
+
+            resultadoDiv.innerHTML = ''; 
+
+            if (!isNaN(numero)) {
+                for (let i = 1; i <= numero; i++) {
+                    resultadoDiv.innerHTML += i + '<br>';
+                }
+            } else {
+                resultadoDiv.innerHTML = 'Você não digitou um número inteiro válido.';
+            }
+        }
+    </script>
+</body>
+
+</html>

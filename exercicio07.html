@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números Pares e Ímpares</title>
+</head>
+
+<body>
+    <div>
+        <h1>Exercício: Números Pares e Ímpares</h1>
+        <h2>Faça um programa que recebe um número inteiro e mostra os números pares e ímpares, separados, de 1 até esse inteiro.</h2>
+    </div>
+
+    <div id="resultado"></div>
+
+    <script>
+        const target = window.prompt('Digite um número inteiro:', '');
+
+        if (!isNaN(target)) {
+            mostrarNumerosParesEImpares(parseInt(target));
+        } else {
+            alert("Você não digitou um número inteiro válido.");
+        }
+
+        function mostrarNumerosParesEImpares(numero) {
+            const resultadoDiv = document.getElementById('resultado');
+            resultadoDiv.innerHTML += `<h3>Números Pares até ${numero}:</h3>`;
+            resultadoDiv.innerHTML += '<ul>';
+            for (let i = 1; i <= numero; i++) {
+                if (i % 2 === 0) {
+                    resultadoDiv.innerHTML += `<li>${i}</li>`;
+                }
+            }
+            resultadoDiv.innerHTML += '</ul>';
+
+            resultadoDiv.innerHTML += `<h3>Números Ímpares até ${numero}:</h3>`;
+            resultadoDiv.innerHTML += '<ul>';
+            for (let i = 1; i <= numero; i++) {
+                if (i % 2 !== 0) {
+                    resultadoDiv.innerHTML += `<li>${i}</li>`;
+                }
+            }
+            resultadoDiv.innerHTML += '</ul>';
+        }
+    </script>
+</body>
+
+</html>
